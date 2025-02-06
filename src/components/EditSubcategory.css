@@ -1,0 +1,43 @@
+.edit-subcategory-container {
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.edit-subcategory-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.edit-subcategory-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-subcategory-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.edit-subcategory-container input,
+.edit-subcategory-container select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+.edit-subcategory-container button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-subcategory-container button:hover {
+    background-color: #2980b9;
+}
