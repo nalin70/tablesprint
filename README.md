@@ -1,3 +1,55 @@
+All the database schemas:
+create database projects;
+use projects;
+create table users (
+loginId integer,
+password varchar(10)
+);
+select * from users;
+
+CREATE TABLE category (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
+    status ENUM('Active', 'Inactive') NOT NULL,
+    sequence INT
+);
+
+select * from category;
+
+CREATE TABLE subcategory (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
+    status ENUM('Active', 'Inactive') NOT NULL,
+    sequence INT
+);
+
+INSERT INTO subcategory (Id, name, sequence, image, status)
+VALUES (1, 'Dummy Subcategory', 1, '/uploads/dummy-image.jpg', 'Active');
+
+
+ALTER TABLE subcategory
+ADD COLUMN categoryId INT NOT NULL,
+ADD FOREIGN KEY (categoryId) REFERENCES category(id);
+
+DESCRIBE subcategory;
+
+
+CREATE TABLE product (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    categoryId INT NOT NULL,
+    subcategoryId INT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    status ENUM('Active', 'Inactive') NOT NULL,
+    FOREIGN KEY (categoryId) REFERENCES category(id),
+    FOREIGN KEY (subcategoryId) REFERENCES subcategory(id)
+);
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
